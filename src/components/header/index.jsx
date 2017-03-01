@@ -19,12 +19,12 @@ class Header extends Component {
 
   static defaultProps = {
     menuItem: [
-      new MenuItem('首页', null),
-      new MenuItem('我的账户', null, '查账、还款、调频'),
-      new MenuItem('积分奖励', null),
-      new MenuItem('优惠礼遇', null),
-      new MenuItem('理财分期', null),
-      new MenuItem('我要办卡', null, '查进度、开卡'),
+      new MenuItem('首页', 'icono-home'),
+      new MenuItem('我的账户', 'icono-barChart', '查账、还款、调频'),
+      new MenuItem('积分奖励', 'icono-codepen'),
+      new MenuItem('优惠礼遇', 'icono-mail'),
+      new MenuItem('理财分期', 'icono-delicious'),
+      new MenuItem('我要办卡', 'icono-paperClip', '查进度、开卡'),
     ]
 
   };
@@ -59,8 +59,8 @@ class Header extends Component {
     let menuElem = showMenu?(
     <aside className={style.menu}>
       <nav className={style.mnav}>
-        <div className={style.mtab}>账上生活</div>
-        <div className={style.mtab}>智能微客服</div>
+        <div className={style.mtab}><i className="icono-iphone"></i>掌上生活</div>
+        <div className={style.mtab }><i className="icono-user"></i>智能微客服</div>
         <span className={style.close} onClick={self.closeClickHandler.bind(self)}>+</span>
       </nav>
 
@@ -70,7 +70,7 @@ class Header extends Component {
             menuItem.map((elem, idx, list)=> {
               return (
                 <li className={style.item} key={'item-' + idx}>
-                  <i className={style.micon}></i>
+                  <i className={elem.icon}></i>
                   <div className={style.title}>{elem.title}</div>
                   <div className={style.desc}>{elem.desc}</div>
                 </li>);
@@ -87,7 +87,7 @@ class Header extends Component {
       <div className={style.logo}>
 
       </div>
-      <div className={style.mentry} onClick={this.entryClickHandler.bind(this)}>
+      <div className={style.mentry+" icono-indent"} onClick={this.entryClickHandler.bind(this)}>
 
       </div>
       {menuElem}
