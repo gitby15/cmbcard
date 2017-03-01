@@ -1,9 +1,11 @@
 .show{
-    transform: rotateZ(90deg);
+    transition: 0.5s;
 }
 .standby{
-
+    transition: 0s;
+    transform: rotateZ(-90deg);
 }
 .leave{
-
+    transition: 0.5s;
+    transform: rotate(90deg);
 }
