@@ -16,7 +16,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: PUBLIC_PATH,
-    publicPath: PUBLIC_PATH,
+    publicPath: './dist/',
     //publicPath:'/op-task/dist/static/',
     chunkFilename: '[name].[chunkhash].js',
     sourceMapFilename: '[name].map'
@@ -32,14 +32,13 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['es2015', 'react']
+              presets: ['es2015','stage-0', 'react']
             }
           }
         ],
       },{
-        test:/\.less$/,
+        test:/\.css/,
         use:[
-
           'style-loader',
           {
             loader:'css-loader',
@@ -49,20 +48,18 @@ module.exports = {
               //localIdentName: '[path][name]__[local]--[hash:base64:5]'
               localIdentName: '[name]-[local]-[hash:base64:5]',
               importLoaders:2,
+              root:'./'
             },
-
           },
-
-          'less-loader',
-
-          //'autoprefixer-loader',
+          'autoprefixer-loader',
         ]
       },{
         test:/\.(jpg|png|gif|svg)$/,
         use:[
+          {
+            loader:'url-loader',
 
-
-          'file-loader',
+          }
         ]
       }
 

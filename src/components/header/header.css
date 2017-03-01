@@ -1,0 +1,91 @@
+.header {
+    background-color: #efefef;
+    height: 41px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    outline: 1px solid red;
+    background-image: url(resolve-url-loader!./logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 105px 17px;
+    width: 105px;
+}
+
+.mbtn {
+    outline: 1px solid red;
+    width: 40px;
+}
+
+.mentry {
+    width:40px;
+    outline: 1px solid red;
+    background-color: #efefef;
+}
+
+.menu{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #efefef;
+    transition: 0.5s;
+}
+.mnav {
+    margin-top: 20px;
+    height: 41px;
+    outline: 1px solid red;
+    position: relative;
+}
+
+.mnav > .mtab {
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+    line-height: 41px;
+    outline: 1px solid black;
+}
+
+.item,.mbody ul {
+    outline:1px solid red;
+    list-style: none;
+    padding:0px;
+    margin:0px;
+}
+
+
+
+.item {
+    height:80px;
+    display:flex;
+    align-items: center;
+}
+.item .micon{
+    width:10px;
+    outline:1px solid green;
+}
+.item .title{
+    outline:1px solid yellow;
+    width:5em;
+}
+
+.item .desc{
+    margin-left:5px;
+    outline:1px solid red;
+}
+
+.close{
+    position: absolute;
+    right:0px;
+    top:3px;
+    font-size: 30px;
+    transform: rotate(45deg);
+    line-height: 30px;
+}
+
+
+
+
